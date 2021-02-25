@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+$white: #FFF;
+$black: #000;
+$grey: #999;
+$light-grey: #EEE;
+$blue: #38E;
+$light-blue: #7CF;
+$green: #3A3;
+$yellow: #FC0;
+$red: #F03;
+
+$big: 1.2em;
+
+@mixin rounded-border {
+    border-radius: 5px;
+    border: 2px $grey solid;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.ui {
+    @import "inputgroup.scss";
+    @import "buttons.scss";
+    @import "dropdown.scss";
+    @import "radio.scss";
+    @import "checkbox.scss";
+    @import "inputmask.scss";
+    @import "tree.scss";
+    @import "confirmdialog.scss";
+    @import "fileupload.scss";
+    @import "draganddrop.scss";
+}
+
+@import "inputswitch.scss";

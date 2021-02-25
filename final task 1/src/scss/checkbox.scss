@@ -1,0 +1,46 @@
+&-checkbox {
+    position: absolute;
+    left: -999999px;        
+
+    & + label {
+        position: relative;
+        padding-left: 2em;
+        cursor: pointer;
+        display: inline-block;
+        padding-top: 0.3em;
+    }
+
+    & + label::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1em;
+        height: 1em;
+        transform: translate(0.25em, 0.25em);
+        @include rounded-border;
+        background: $white;
+    }
+
+    &:checked + label::before {
+        background: $blue;
+        border: 0.2em solid $blue;
+    }
+
+    & + label::after {
+        content: '';
+        background-image: url('../../node_modules/@fortawesome/fontawesome-free/svgs/solid/check.svg');
+        filter: invert(1);
+        position: absolute;
+        top: 0.6em;
+        left: 0.6em;
+        width: 0.75em;
+        height: 0.75em;
+    }
+
+    &:not(:checked) + label::after {
+        opacity: 0;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}

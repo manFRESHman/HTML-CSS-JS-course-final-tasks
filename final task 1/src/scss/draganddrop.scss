@@ -1,0 +1,43 @@
+&-draganddrop {
+    display: flex;
+    width: 100%;
+    border: solid $grey;
+
+    &-drag {
+        flex: 1;
+
+        & > * {
+            border: solid $grey;
+            margin: 5px;
+            padding: 10px;
+            display: grid;
+            grid-auto-flow: column;
+            align-items: start;
+            cursor: move;
+
+
+            & > * {
+                img {
+                    width: 200px;
+                }
+
+                &:last-child {
+                    text-align: end;
+                    font-size: 2em;
+                }
+            }
+        }
+    }
+
+    &-drop {
+        flex: 1;
+        margin: 5px;
+        padding: 10px;
+        border: solid $grey;
+        height: 100%;
+
+        th {
+            background-color: $light-grey;
+        }
+    }
+}

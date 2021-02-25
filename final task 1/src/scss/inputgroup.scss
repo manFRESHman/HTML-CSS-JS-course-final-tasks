@@ -1,0 +1,43 @@
+&-inputgroup {
+    @include rounded-border;
+    display: inline-block;
+    word-spacing: -1em;
+    text-align: center;
+
+    & > * {
+        display: inline-block;
+    }
+
+    & > * {
+        padding: 10px;
+    }
+
+    &-addon {
+        border-left: 2px $grey solid;
+        border-right: 2px $grey solid;
+        background-color: $light-grey;
+
+        &:first-child {
+            border-left: none;
+        }
+    
+        &:last-child {
+            border-right: none;
+        }
+
+        &:not(:first-child){
+            margin-left:-2px; 
+        }
+    }
+
+    input {
+        border: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: $big;
+        
+        &:focus {
+            outline: none;
+        }
+    }
+}

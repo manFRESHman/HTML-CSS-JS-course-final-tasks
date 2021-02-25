@@ -1,0 +1,30 @@
+&-fileupload {
+    @include rounded-border;
+    display: block;
+
+    &-header {
+        display: flex;
+        background-color: $light-grey;
+        
+        & > * {
+            margin: 10px;
+        }
+    }
+    
+    &-files-list {
+        display: inline-block;
+    }
+
+    &-file-container {
+        padding: 10px;
+        display: flex;
+        border-bottom: 2px $light-grey solid;
+
+        & > * {
+            &:not(:last-child) {
+                height: 2em;
+            }
+            margin: 10px;
+        }
+    }
+}

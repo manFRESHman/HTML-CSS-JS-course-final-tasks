@@ -1,0 +1,160 @@
+$padding: 20px;
+
+$template-header: 1fr 15vw 15vw 15vw 15vw 15vw;
+$template: 1fr 15vw 15vw 15vw 15vw 15vw;
+$template-short: 1fr 20vw 20vw 20vw;
+$grey: #EEE;
+$dark-grey: #AAA;
+$white: #FFF;
+$blue: #2BF;
+
+.tree {
+    &__header {
+        display: grid;
+        grid-template-columns: $template-header;
+        width: 100vw;
+
+        &__search {
+            background: none;
+            border: none;
+            width: 100%;
+        }
+
+        @media (max-width: 1279px) {
+            grid-template-columns: $template-short;
+
+            & > *:nth-child(-n + 3):nth-child(n + 3),
+            & > *:nth-child(-n + 6):nth-child(n + 6) {
+                display: none;
+            }
+        } 
+
+        & > * {
+            display: flex;
+            outline: solid $dark-grey;
+            background-color: $grey;
+            color: $dark-grey;
+            padding: 5px;
+        }
+    }
+
+    &__main {
+        padding-left: $padding;
+
+        &__icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        &__row {
+            list-style-type:none;
+            position:relative;
+            border-top: 1px solid $dark-grey;
+            border-bottom: 1px solid $dark-grey;
+            margin: -1px 0;
+
+            &__folder {
+                padding-left: $padding;
+            }
+
+            &__arrow {
+                width:1em;
+                height:1em;
+                position:absolute;
+                left: -1.5em;
+                top:0;
+                cursor:pointer;
+                transform: rotate(-90deg);
+        
+                & + ol {
+                    & > li {
+                        display:none;
+                    }
+                }
+            
+                &::before{
+                    background-color: white;
+                    opacity: 1;
+                    font-family: 'Material Icons';
+                    content: 'arrow_drop_down';
+                }
+            
+                &:checked {
+                    transform: rotate(-45deg);
+        
+                    & + .tree__main__row__folder {
+                        height:auto;
+                        display:block;
+        
+                        & > * {
+                            display:block;
+                        }
+                    }
+                }
+            
+                &:checked::before{
+                    background-color: white;
+                    opacity: 1;
+                    font-family: 'Material Icons';
+                    content: 'arrow_drop_down';
+                }
+            }
+    
+            &__content {
+                display: grid;
+                cursor:pointer;
+                grid-template-columns: $template;
+
+                &__photo {
+                    width: 1.5em;
+                }
+    
+                & > * {
+                    display: flex;
+                }
+    
+                @media (max-width: 1279px) {
+                    grid-template-columns: $template-short;
+    
+                    & > *:nth-child(-n + 3):nth-child(n + 3),
+                    & > *:nth-child(-n + 6):nth-child(n + 6) {
+                        display: none;
+                    }
+                } 
+            }
+        }
+    }
+
+    &__footer {
+        display: grid;
+        grid-auto-flow: column;
+        background-color: $grey;
+        border-top: 1px solid $dark-grey;
+        bottom: 0;
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+
+        &__size {
+            background: none;
+        }
+
+        & > * {
+            &:first-child {
+                display: flex;
+                align-items: center;
+
+                & > * {
+                    margin: 5px;
+                }
+            }
+
+            &:last-child {
+                justify-self: end;
+            }
+        }
+    }
+}

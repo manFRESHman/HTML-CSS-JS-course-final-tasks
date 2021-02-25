@@ -1,0 +1,134 @@
+$grey: #EEE;
+$dark-grey: #AAA;
+$white: #FFF;
+
+.editor {
+    &__control-panel {
+        display: flex;
+        height: 2em;
+        
+        & > * {
+            padding: 0.5em;
+        }
+    }
+
+    &__footer {
+        outline: solid $dark-grey;
+        font-size: 0.75em;
+
+        &__options {
+            outline: 1px solid $dark-grey;
+            display: flex;
+
+            & > &__more-dots {
+                width: 1.5em;
+                height: 1.5em;
+                order: 1;
+                box-sizing: border-box;
+                display: none;
+            }
+
+            & > &__more-input {
+                font-size: inherit;
+                margin: 0;
+                height: 3em;
+                width: 3em;
+                margin: 0 -3em;
+                opacity: 0;
+                order: 1;
+                box-sizing: border-box;
+                display: none;
+            }
+    
+            & > * {
+                outline: 1px solid $dark-grey;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 3em;
+            
+                & > * {
+                    padding: 0.5em;
+                    font-size: 1.5em;
+                }
+            }
+
+            &__select {
+                border: none;
+                width: 3em;
+            }
+
+            &__fonts {
+                & > * {
+                    width: 8em;
+                    font-size: unset;
+                    border: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 1279px) {
+        input:checked ~ * {
+            &:nth-child(n + 6):nth-child(-n + 12) {
+                display: block;
+            }
+        }
+
+        &__footer {
+            &__options {
+                & > *:nth-child(1), & > *:nth-child(2) {
+                    display: flex;
+                }
+
+                & > &__more {
+                    display: block;
+                    position: relative;
+                }
+
+                & > *:nth-child(n + 6):nth-child(-n + 12) {
+                    display: none;
+                    position: absolute;
+                    background-color: $white;
+                    left: 49em;
+                }
+
+                @for $i from 6 through 12 {
+                    & > *:nth-child(#{$i}) {
+                        top: 6 + 3em * ($i - 6);
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        input:checked ~ * {
+            &:nth-child(n + 4):nth-child(-n + 12) {
+                display: block;
+            }
+        }
+
+        &__footer {
+            &__options {
+                & > &__more {
+                    display: block;
+                    position: relative;
+                }    
+                
+                & > *:nth-child(n + 4):nth-child(-n + 12) {
+                    display: none;
+                    position: absolute;
+                    background-color: $white;
+                    left: 16em;
+                }
+
+                @for $i from 4 through 12 {
+                    & > *:nth-child(#{$i}) {
+                        top: 6 + 3em * ($i - 4);
+                    }
+                }
+            }
+        }
+    }
+}

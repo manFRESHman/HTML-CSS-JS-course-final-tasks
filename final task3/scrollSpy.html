@@ -1,0 +1,46 @@
+<head>
+    <style>
+        html { height: 100%; }
+    </style>
+</head>
+<body>
+    <input type="range" style="position: fixed; width: 90%;">
+    <div style="height: 3000px; background-color: blanchedalmond;">
+        <img class="lzy_img" src="lazy.png" data-src="https://images.punkapi.com/v2/2.png" style="display: block; height: 1000px;"/>
+        <img class="lzy_img" src="lazy.png" data-src="https://images.punkapi.com/v2/30.png" style="display: block; height: 1000px;"/>
+        <img class="lzy_img" src="lazy.png" data-src="https://images.punkapi.com/v2/50.png" style="display: block; height: 1000px;"/>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            setTimeout(() => {
+                const input = document.querySelector('input');
+                input.onchange = () => console.log('input value: ', input.value);
+                input.value = 3;
+            }, 1000)
+            
+            const imageObserver = new IntersectionObserver((entries, imgObserver) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const lazyImage = entry.target;
+                        console.log("lazy loading ", lazyImage);
+                        lazyImage.src = lazyImage.dataset.src;
+                    }
+                })
+            });
+            document.querySelectorAll('img.lzy_img').forEach((v) => {
+                imageObserver.observe(v);
+            });
+
+            window.addEventListener('scroll', function() {
+                const h = document.documentElement, 
+                    b = document.body,
+                    st = 'scrollTop',
+                    sh = 'scrollHeight';
+
+                const percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+                document.querySelector('input').value = percent;
+                console.log(percent);
+            });
+        })
+    </script>
+</body>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Task1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div>
+        Left Addon:
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">
+                <i class="fa fa-user"></i>
+            </span>
+            <input type="text" placeholder="Username">
+        </div>
+    </div>
+    
+    <div>
+        Left and Right Addon:
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">
+                $
+            </span>
+            <input type="text" placeholder="Price">
+            <span class="ui-inputgroup-addon">
+                .00
+            </span>
+        </div>
+    </div>
+
+    <div>
+        Multiple Addons:
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">
+                <i class="fa fa-credit-card"></i>
+            </span>
+            <span class="ui-inputgroup-addon">
+                <i class="fa fa-cc-visa"></i>
+            </span>
+            <input type="text" placeholder="Price">
+            <span class="ui-inputgroup-addon">
+                $
+            </span>
+            <span class="ui-inputgroup-addon">
+                .00
+            </span>
+        </div>
+    </div>
+
+    <div>
+        Buttons:
+        <div>
+            <button class="ui-button ui-button--primary">
+                Primary
+            </button>
+            <button class="ui-button ui-button--secondary">
+                Secondary
+            </button>
+            <button class="ui-button ui-button--success">
+                Success
+            </button>
+            <button class="ui-button ui-button--info">
+                Info
+            </button>
+            <button class="ui-button ui-button--warning">
+                Warning
+            </button>
+            <button class="ui-button ui-button--danger">
+                Danger
+            </button>
+        </div>
+    </div>
+
+    <div>
+        Blue Buttons:
+        <div>
+            <button class="ui-button ui-button--primary">
+                Click
+            </button>
+            <button class="ui-button ui-button--primary">
+                <i class="fa fa-check"></i>
+                Click
+            </button>
+            <button class="ui-button ui-button--primary">
+                Click
+                <i class="fa fa-check"></i>
+            </button>
+            <button class="ui-button ui-button--primary">
+                <i class="fa fa-check"></i>
+            </button>
+            <button class="ui-button ui-button--primary" disabled>
+                <i class="fa fa-check"></i>
+                Disabled
+            </button>
+        </div>
+    </div>
+
+    <div>
+        Rounded buttons:
+        <div>
+            <button class="ui-button ui-button--primary ui-button--rounded">
+                Primary
+            </button>
+            <button class="ui-button ui-button--secondary ui-button--rounded">
+                Secondary
+            </button>
+            <button class="ui-button ui-button--success ui-button--rounded">
+                Success
+            </button>
+            <button class="ui-button ui-button--info ui-button--rounded">
+                Info
+            </button>
+            <button class="ui-button ui-button--warning ui-button--rounded">
+                Warning
+            </button>
+            <button class="ui-button ui-button--danger ui-button--rounded">
+                Danger
+            </button>
+        </div>
+    </div>
+
+    <div>
+        Single Dropdown:
+        <div>
+            <ui-dropdown placeholder="Select a City">
+                <ui-dropdown-option>New York</ui-dropdown-option>
+                <ui-dropdown-option>Rome</ui-dropdown-option>
+                <ui-dropdown-option>London</ui-dropdown-option>
+                <ui-dropdown-option>Istanbul</ui-dropdown-option>
+                <ui-dropdown-option>Paris</ui-dropdown-option>
+            </ui-dropdown>
+        </div>
+    </div>
+
+    <div>
+        Content with filter:
+        <div>
+            <ui-dropdown filter placeholder="Select a Car">
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/Chevrolet.png')%>">
+                    Chevrolet
+                </ui-dropdown-option>
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/bmw.png')%>">
+                    BMW
+                </ui-dropdown-option>
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/Fiat.png')%>">
+                    Fiat
+                </ui-dropdown-option>
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/ford.png')%>">
+                    Ford
+                </ui-dropdown-option>
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/honda.png')%>">
+                    Honda
+                </ui-dropdown-option>
+            </ui-dropdown>
+        </div>
+    </div>
+
+    <div>
+        Multiselect:
+        <div>
+            <ui-dropdown filter multi placeholder="Select a Car">
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/Chevrolet.png')%>">
+                    Chevrolet
+                </ui-dropdown-option>
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/bmw.png')%>">
+                    BMW
+                </ui-dropdown-option>
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/Fiat.png')%>">
+                    Fiat
+                </ui-dropdown-option>
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/ford.png')%>">
+                    Ford
+                </ui-dropdown-option>
+                <ui-dropdown-option>
+                    <img src="<%=require('../assets/honda.png')%>">
+                    Honda
+                </ui-dropdown-option>
+            </ui-dropdown>
+        </div>
+    </div>
+
+    <div>
+        Radio Button:
+        <div>
+            <p>
+                <input type="radio" id="radio1" class="ui-radio" name="radio-group" checked>
+                <label for="radio1">Apple</label>
+            </p>
+            <p>
+                <input type="radio" id="radio2" class="ui-radio" name="radio-group">
+                <label for="radio2">Peach</label>
+            </p>
+            <p>
+                <input type="radio" id="radio3" class="ui-radio" name="radio-group">
+                <label for="radio3">Orange</label>
+            </p>
+        </div>
+    </div>
+
+    <div>
+        Checkbox:
+        <div>
+            <p>
+                <input type="checkbox" id="checkbox1" class="ui-checkbox" name="checkbox-group" checked>
+                <label for="checkbox1">Apple</label>
+            </p>
+            <p>
+                <input type="checkbox" id="checkbox2" class="ui-checkbox" name="checkbox-group">
+                <label for="checkbox2">Peach</label>
+            </p>
+            <p>
+                <input type="checkbox" id="checkbox3" class="ui-checkbox" name="checkbox-group">
+                <label for="checkbox3">Orange</label>
+            </p>
+        </div>
+    </div>
+
+    <div>
+        Input Switch:
+        <div style="font-size: 24pt;">
+            <ui-inputswitch></ui-inputswitch>
+        </div>
+    </div>
+
+    <div>
+        Input mask - numeric:
+        <div>
+            <input 
+                id="1"
+                type="tel" 
+                placeholder="XXXXX" 
+                pattern="\d{5}" 
+                class="ui-inputmask">
+        </div>
+    </div>
+
+    <div>
+        Input mask - date:
+        <div>
+            <input 
+                id="2"
+                type="tel" 
+                placeholder="MM/YY" 
+                class="ui-inputmask"
+                pattern="(1[0-2]|0[1-9])\/\d\d" 
+                data-valid-example="11/18">
+        </div>
+    </div>
+
+    <div>
+        Input mask - credit cart:
+        <div>
+            <input 
+                id="3"
+                type="tel" 
+                placeholder="XXXX XXXX XXXX XXXX" 
+                pattern="\d{4} \d{4} \d{4} \d{4}" 
+                class="ui-inputmask">            
+        </div>
+    </div>
+
+    <div>
+        Input mask - phone:
+        <div>
+            <input 
+                id="4"
+                type="tel"
+                placeholder="(XXX) XXX-XXXX" 
+                pattern="\(\d{3}\) \d{3}\-\d{4}" 
+                class="ui-inputmask">
+        </div>
+    </div>
+
+    <div>
+        Tree:
+        <div>
+            <ui-tree data='[
+                { 
+                    "name": "folder1", 
+                    "children": [ 
+                        { 
+                            "name": "folder2",
+                            "children": [
+                                {
+                                    "name": "file"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "file1",
+                            "children": []
+                        },
+                        {
+                            "name": "file2"
+                        }
+                    ]
+                },
+                { 
+                    "name": "folder3",
+                    "children": [
+                        {
+                            "name": "file3"
+                        },
+                        {
+                            "name": "file4"
+                        }
+                    ]
+                },
+                {
+                    "name": "file5"
+                },
+                {
+                    "name": "file6"
+                },
+                {
+                    "name": "file7"
+                }
+            ]'>
+        </ui-tree>
+        </div>
+    </div>
+
+    <div>
+        Confirm Dialog:
+        <div>
+            <button onClick="main.uiConfirm('Are you sure that you want to proceed?', () => alert('Confirmed'), () => alert('Canceled'))">
+                Show confirmation dialog
+            </button>
+        </div>
+    </div>
+
+    <div>
+        File Upload:
+        <div>
+            <ui-fileupload></ui-fileupload>
+        </div>
+    </div>
+
+    <div>
+        Drag and Drop:
+        <div>
+            <ui-draganddrop 
+                show='["vin", "year"]' 
+                table='["vin", "year", "brand", "color"]'
+                data='[
+                    {
+                        "img": "https://www.carlogos.org/car-logos/chevrolet-logo.png",
+                        "vin": "abc",
+                        "brand": "Chevrolet",
+                        "year": "2000",
+                        "color": "red"
+                    },
+                    {
+                        "img": "https://www.carlogos.org/car-logos/bmw-logo.png",
+                        "vin": "xyz",
+                        "brand": "bmw",
+                        "year": "2020",
+                        "color": "black"
+                    },
+                    {
+                        "img": "https://www.carlogos.org/car-logos/fiat-logo.png",
+                        "vin": "foo",
+                        "brand": "Fiat",
+                        "year": "2010",
+                        "color": "white"
+                    },
+                    {
+                        "img": "https://www.carlogos.org/car-logos/ford-logo.png",
+                        "vin": "bar",
+                        "brand": "ford",
+                        "year": "1998",
+                        "color": "blue"
+                    },
+                    {
+                        "img": "https://www.carlogos.org/car-logos/honda-logo.png",
+                        "vin": "test",
+                        "brand": "honda",
+                        "year": "1999",
+                        "color": "green"
+                    }
+                ]'>
+            </ui-draganddrop>
+        </div>
+    </div>
+</body>

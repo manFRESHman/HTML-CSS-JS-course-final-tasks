@@ -1,0 +1,26 @@
+&-inputmask {
+    @include rounded-border;
+    &-shell {
+        position: relative;
+        line-height: 1;
+        span {
+            position: absolute;
+            left: 3px;
+            top: 50%;
+            transform: translate(0, -50%);
+            color: $grey;
+            pointer-events: none;
+            z-index: -1;
+            i {
+                visibility: hidden;
+            }
+        }
+    }
+      
+    &, &-shell span {
+        font-size: 16px;
+        font-family: monospace;
+        padding-right: 10px;
+        background-color: transparent;
+    }
+}

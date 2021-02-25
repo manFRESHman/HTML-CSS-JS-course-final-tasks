@@ -1,0 +1,97 @@
+$pink: #A26;
+$blue: #1AD;
+$grey: #EEE;
+$dark-grey: #DDD;
+$green: #3A2;
+
+.comparison {
+    &__check {
+        color: $green;
+    }
+
+    &__layout {
+      display: grid;
+      grid-template-rows: 50px 1fr;
+      grid-template-columns: repeat(5, 1fr);
+
+      &__nav {
+        cursor: pointer;
+        display: block;
+        user-select: none;
+        border-top: 5px solid $blue;
+        text-align: center;
+
+        &_empty {
+          border-top: 5px solid transparent;
+        }
+
+        input[type="radio"]:checked + .comparison__layout__page + &{
+          border-top: 5px solid $pink;
+        }
+      }
+
+      &__radio {
+        display: none;
+
+        &:checked + .comparison__layout__page {
+          opacity: 1;
+        }
+      }
+
+      &__page {
+        display: flex;
+        grid-row-start: 2;
+        border: 1px solid $dark-grey;
+
+        &__pounds {
+          position:relative; 
+          top: -0.25em;
+          font-size: 0.75em;
+        }
+
+        &__section {
+          background-color: $grey;
+          outline: 2px solid $grey;
+        }
+
+        & > * {
+          width: 100%;
+
+          & > * {
+            text-align: center;
+            min-height: 2em !important;
+            padding: 5px;
+            border-bottom: 1px #EEE solid;
+          }
+        }
+      }
+    }
+}
+
+@media (max-width: 768px) {
+  .comparison {
+    &__layout {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .comparison__layout__page_side + .comparison__layout__nav {
+    display: none;
+  }
+
+  .comparison__layout__page_side ~ .comparison__layout__page {
+    opacity: 0;
+  }
+
+  .comparison__layout__page {
+    &.comparison__layout__page_side {
+        grid-column-start: 1;
+        grid-column: span 2
+    }
+
+    &:not(.comparison__layout__page_side) {
+      grid-column-start: 3;
+      grid-column-end: span 2;
+    }
+  }
+}

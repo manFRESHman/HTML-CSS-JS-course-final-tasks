@@ -1,0 +1,44 @@
+<head>
+    <style>
+        html { height: 100%; }
+    </style>
+</head>
+<body>
+    <div style="display: grid; margin: 10px; justify-content: center;">
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+            const length = 10;
+            const container = document.querySelector('div');
+            container.style.gridTemplateColumns = "repeat(10, 1fr)";
+            const idxs = Array.from({ length }, (_, i) => i);
+            idxs.forEach(() => {
+                const img = document.createElement('img');
+                img.onerror = function () { 
+                    img.src = 'no image.png';
+                }
+                img.src = 'lazy.png';
+                img.style.width = 50;
+                container.appendChild(img);
+            });
+
+            const array = await Promise.all(idxs.map(() => fetch('https://api.punkapi.com/v2/beers/random')
+                .then(res => res.json())))
+            array.forEach((arr, i) => {
+                const beer = arr[0];
+                const img = container.children[i];
+                img.onclick = async () => {
+                    const infoNode = document.createElement('div');
+                    infoNode.innerHTML = 'LOADING';
+                    infoNode.style.gridRowStart = 2;
+                    infoNode.style.gridColumnStart = i + 1;
+                    container.appendChild(infoNode);
+                    const moreInfo = await fetch(`https://api.punkapi.com/v2/beers/${beer.id}`).then((e) => e.json());
+                    infoNode.innerHTML = moreInfo[0].name;
+                }
+                img.setAttribute('src', beer.image_url);
+                img.style.cursor = 'pointer';
+            });
+        })
+    </script>
+</body>

@@ -1,0 +1,41 @@
+&-button {
+    @include rounded-border;
+    border: none;
+    padding: 10px 20px;
+    color: $white;
+    font-size: $big;
+
+    &:disabled {
+        filter: opacity(50%);
+    }
+
+    &--primary {
+        background-color: $blue;
+    }
+
+    &--secondary {
+        background-color: $light-grey;
+        color: $black;
+    }
+
+    &--success {
+        background-color: $green;
+    }
+
+    &--info {
+        background-color: $blue;
+    }
+
+    &--warning {
+        background-color: $yellow;
+        color: $black;
+    }
+
+    &--danger {
+        background-color: $red;
+    }
+
+    &--rounded {
+        border-radius: 100000000000000px;
+    }
+}

@@ -1,0 +1,13 @@
+&-tree {
+
+    &-row {
+        & > * > * {
+            display: flex;
+            margin-left: 20px;
+        }
+    }
+
+    &-checkbox-container {
+        display: flex;
+    }
+}

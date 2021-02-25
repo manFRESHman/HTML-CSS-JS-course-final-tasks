@@ -1,0 +1,84 @@
+$yellow: #FC5;
+$brown: #641;
+$red: #831;
+$blue: #796;
+
+.weather {
+    background-color: $yellow;
+    color: $brown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 500;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        font-size: 0.75em;
+    }
+
+    & > * {
+        display: flex;
+
+        & > * {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            @media (max-width: 768px) {
+                margin: 5px;
+            }
+            justify-content: center;
+    
+            & > * {
+                display: flex;
+                justify-content: center;
+    
+                @media (max-width: 1279px) {
+                    flex-direction: column;
+                }        
+            }
+        }
+    }
+
+    &__temberature {
+        margin: 0 5px;
+        font-weight: 600;
+
+        &_today {
+            font-weight: 900;
+            font-size: 1.5em;
+        }
+
+        &_day {
+            color: $red;
+        }
+
+        &_night {
+            color: $blue;
+        }
+    }
+
+    &__city {
+        font-weight: 900;
+        font-size: 1.5em;
+        text-transform: uppercase;
+
+        &__subtitle {
+            font-size: 1.4em;
+            text-transform: uppercase;
+        }
+    }
+
+    &__icon {
+        &_today {
+            font-size: 3em;
+        }
+    }
+
+    &__day {
+        & > *:first-child {
+            @media (max-width: 1279px) {
+                display: none;
+            }
+        }
+    }
+}
