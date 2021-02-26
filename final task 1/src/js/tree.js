@@ -6,8 +6,6 @@ let observer = new MutationObserver((mutations) => {
             }
             else if (mutation.attributeName === 'checked') {
                 const tree = mutation.target.closest('ui-tree');
-                console.log('new value:', [...tree.querySelectorAll('[checked]')]
-                    .map(element => { console.log(element); return element.closest('.row1')}));
 
                 tree.setAttribute('value', [...tree.querySelectorAll('[checked]')]
                     .map(element => element.closest('.row1').querySelector('.name').innerHTML).join(', '));
