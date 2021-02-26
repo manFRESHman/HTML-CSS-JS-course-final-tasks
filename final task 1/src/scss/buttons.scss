@@ -4,6 +4,7 @@
     padding: 10px 20px;
     color: $white;
     font-size: $big;
+    cursor: pointer;
 
     &:disabled {
         filter: opacity(50%);

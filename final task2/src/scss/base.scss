@@ -23,9 +23,16 @@ body {
     margin: 0;
 }
 
+.links__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 @import 'weather.scss';
 @import 'comparison.scss';
 @import 'calendar.scss';
 @import 'tree.scss';
 @import 'WYSIWYG.scss';
-@import 'test.scss';

@@ -78,10 +78,6 @@ module.exports = (env, argv) => {
         filename: 'WYSIWYG.html',
         template: './src/views/WYSIWYG.html'
       }),
-      new HtmlWebPackPlugin({
-        filename: 'test.html',
-        template: './src/views/test.html'
-      }),
     ]
   }
 }
