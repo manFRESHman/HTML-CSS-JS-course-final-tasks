@@ -50,23 +50,23 @@ $yellow: #FA2;
         display: grid;
         grid-template-columns: repeat(7, 1fr);
 
-        & > &__day {
-            background-color: $grey;
-            padding-left: 5px;
-            text-align: start;
-        }
-
-        & > *:nth-child(8) {
-            grid-column: 3;
-        }
-
-        & > * {
+        &__day {
             background-color: $white;
             outline: 2px solid $grey;
             text-align: end;
             padding: 5px;
 
-            & > * {
+            &_first {
+                grid-column: 3;
+            }
+
+            &_header {
+                background-color: $grey;
+                padding-left: 5px;
+                text-align: start;
+            }
+
+            &__event {
                 text-align: start;
                 background-color: $blue;
                 color: $white;
@@ -76,82 +76,82 @@ $yellow: #FA2;
             }
         }
     }
-}
 
-.calendar_mobile {
-    display: none;
+    &_mobile {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
     .calendar {
         display: none;
-    }
 
-    .calendar_mobile {
-        display: block;
-        background-color: white;
-        padding: 20px;
-
-        &__sidepanel {
-            & > * {
-                & > * {
+        &_mobile {
+            display: block;
+            background-color: white;
+            padding: 20px;
+    
+            &__sidepanel {
+                &__button {
+                    border-radius: 3px;
+                    color: $white;
+                    flex: 0;
+                    margin: 5px 0;
+                    padding: 5px;
                     margin: 10px;
                     display: inline-block;
                 }
             }
-        }
-
-        &__main {
-            display: block;
-
-            &__event {
-                display: grid;
-                grid-auto-flow: column;
-                grid-template-columns: 40px 1fr 1fr;
-
-                &__tag {
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
-                    
-                    &_red {
-                        background-color: $red;
+    
+            &__main {
+                display: block;
+    
+                &__event {
+                    display: grid;
+                    grid-auto-flow: column;
+                    grid-template-columns: 40px 1fr 1fr;
+                    border-top: 2px solid $grey;
+                    margin: 20px;
+                    padding: 20px 0;
+    
+                    &__tag {
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        
+                        &_red {
+                            background-color: $red;
+                        }
+            
+                        &_cyan {
+                            background-color: $cyan;
+                        }
+            
+                        &_blue {
+                            background-color: $blue;
+                        }
+            
+                        &_yellow {
+                            background-color: $yellow;
+                        }
                     }
-        
-                    &_cyan {
-                        background-color: $cyan;
-                    }
-        
-                    &_blue {
-                        background-color: $blue;
-                    }
-        
-                    &_yellow {
-                        background-color: $yellow;
+    
+                    &__arrow {
+                        justify-self: end;
                     }
                 }
-
-                &__arrow {
-                    justify-self: end;
+            }
+    
+            &__panel {
+                display: flex;
+                justify-content: center;
+    
+                &__button {
+                    margin: 20px;
+                    padding: 5px 20px;
+                    background-color: $dark-grey;
+                    border-radius: 5px;
                 }
-            }
-
-            & > * {
-                border-top: 2px solid $grey;
-                margin: 20px;
-                padding: 20px 0;
-            }
-        }
-
-        &__panel {
-            display: flex;
-            justify-content: center;
-
-            & > * {
-                margin: 20px;
-                padding: 5px 20px;
-                background-color: $dark-grey;
-                border-radius: 5px;
             }
         }
     }

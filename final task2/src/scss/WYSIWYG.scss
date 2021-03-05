@@ -7,7 +7,7 @@ $white: #FFF;
         display: flex;
         height: 2em;
         
-        & > * {
+        &__element {
             padding: 0.5em;
         }
     }
@@ -19,58 +19,58 @@ $white: #FFF;
         &__options {
             outline: 1px solid $dark-grey;
             display: flex;
-
-            & > &__more-dots {
-                width: 1.5em;
-                height: 1.5em;
-                order: 1;
-                box-sizing: border-box;
-                display: none;
-            }
-
-            & > &__more-input {
-                font-size: inherit;
-                margin: 0;
-                height: 3em;
-                width: 3em;
-                margin: 0 -3em;
-                opacity: 0;
-                order: 1;
-                box-sizing: border-box;
-                display: none;
-            }
     
-            & > * {
+            &__section {
                 outline: 1px solid $dark-grey;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 height: 3em;
+
+                &_fonts {
+                    & > * {
+                        width: 8em;
+                        font-size: unset;
+                        border: none;
+                    }
+                }
+
+                &_more-dots {
+                    width: 1.5em;
+                    height: 1.5em;
+                    order: 1;
+                    box-sizing: border-box;
+                    display: none;
+                }
+    
+                &_more-input {
+                    font-size: inherit;
+                    margin: 0;
+                    height: 3em;
+                    width: 3em;
+                    margin: 0 -3em;
+                    opacity: 0;
+                    order: 1;
+                    box-sizing: border-box;
+                    display: none;
+                }
             
-                & > * {
+                &__element {
                     padding: 0.5em;
                     font-size: 1.5em;
                     cursor: pointer;
-                }
-            }
 
-            &__select {
-                border: none;
-                width: 3em;
-            }
-
-            &__fonts {
-                & > * {
-                    width: 8em;
-                    font-size: unset;
-                    border: none;
+                    &_select {
+                        border: none;
+                        width: 3em;
+                    }
                 }
             }
         }
     }
 
     @media (max-width: 1279px) {
-        input:checked ~ * {
+        input:checked ~ .editor__footer__options__section {
             &:nth-child(n + 6):nth-child(-n + 12) {
                 display: block;
             }
@@ -78,16 +78,11 @@ $white: #FFF;
 
         &__footer {
             &__options {
-                & > *:nth-child(1), & > *:nth-child(2) {
+                &__section:nth-child(1), &__section:nth-child(2) {
                     display: flex;
                 }
 
-                & > &__more {
-                    display: block;
-                    position: relative;
-                }
-
-                & > *:nth-child(n + 6):nth-child(-n + 12) {
+                &__section:nth-child(n + 6):nth-child(-n + 12) {
                     display: none;
                     position: absolute;
                     background-color: $white;
@@ -95,7 +90,7 @@ $white: #FFF;
                 }
 
                 @for $i from 6 through 12 {
-                    & > *:nth-child(#{$i}) {
+                    &__section:nth-child(#{$i}) {
                         top: 6 + 3em * ($i - 6);
                     }
                 }
@@ -104,20 +99,15 @@ $white: #FFF;
     }
 
     @media (max-width: 768px) {
-        input:checked ~ * {
+        input:checked ~ .editor__footer__options__section {
             &:nth-child(n + 4):nth-child(-n + 12) {
                 display: block;
             }
         }
 
         &__footer {
-            &__options {
-                & > &__more {
-                    display: block;
-                    position: relative;
-                }    
-                
-                & > *:nth-child(n + 4):nth-child(-n + 12) {
+            &__options {  
+                &__section:nth-child(n + 4):nth-child(-n + 12) {
                     display: none;
                     position: absolute;
                     background-color: $white;
@@ -125,7 +115,7 @@ $white: #FFF;
                 }
 
                 @for $i from 4 through 12 {
-                    & > *:nth-child(#{$i}) {
+                    &__section:nth-child(#{$i}) {
                         top: 6 + 3em * ($i - 4);
                     }
                 }
