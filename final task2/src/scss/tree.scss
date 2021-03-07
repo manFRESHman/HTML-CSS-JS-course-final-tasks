@@ -66,7 +66,7 @@ $blue: #2BF;
                 transform: rotate(-90deg);
                 opacity: 0;
             
-                & + div{
+                & + .tree__main__row__logo{
                     font-family: 'Material Icons';
                     transform: rotate(-90deg);
                     position: absolute;
@@ -76,7 +76,7 @@ $blue: #2BF;
                 }
             
                 &:checked {
-                    & + div{
+                    & + .tree__main__row__logo{
                         transform: rotate(-45deg);
                     }
         

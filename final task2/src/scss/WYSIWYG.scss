@@ -27,14 +27,6 @@ $white: #FFF;
                 align-items: center;
                 height: 3em;
 
-                &_fonts {
-                    & > * {
-                        width: 8em;
-                        font-size: unset;
-                        border: none;
-                    }
-                }
-
                 &_more-dots {
                     width: 1.5em;
                     height: 1.5em;
@@ -65,7 +57,7 @@ $white: #FFF;
                         display: inline-flex;
                         position: relative;
                         
-                        & > * {
+                        .editor__footer__options__section__element__dropdown {
                             border: none;
                             -webkit-appearance: none;
                             width: 100%;
@@ -80,9 +72,11 @@ $white: #FFF;
                             pointer-events: none;
                         }
                     }
-                    
+
                     &_text {
-                        width: 5em;
+                        width: 8em;
+                        font-size: unset;
+                        border: none;
                     }
                 }
             }
