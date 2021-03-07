@@ -64,18 +64,23 @@ $blue: #2BF;
                 top:0;
                 cursor:pointer;
                 transform: rotate(-90deg);
+                opacity: 0;
             
-                &::before{
-                    background-color: white;
-                    opacity: 1;
+                & + div{
                     font-family: 'Material Icons';
-                    content: 'arrow_drop_down';
+                    transform: rotate(-90deg);
+                    position: absolute;
+                    top: 0;
+                    left: -1em;
+                    pointer-events: none;
                 }
             
                 &:checked {
-                    transform: rotate(-45deg);
+                    & + div{
+                        transform: rotate(-45deg);
+                    }
         
-                    & + .tree__main__row__folder {
+                    & ~ .tree__main__row__folder {
                         height:auto;
                         display:block;
         
@@ -83,13 +88,6 @@ $blue: #2BF;
                             display:block;
                         }
                     }
-                }
-            
-                &:checked::before{
-                    background-color: white;
-                    opacity: 1;
-                    font-family: 'Material Icons';
-                    content: 'arrow_drop_down';
                 }
             }
     
@@ -99,7 +97,7 @@ $blue: #2BF;
                 grid-template-columns: $template;
 
                 &__photo {
-                    width: 1.5em;
+                    height: 1.5em;
                 }
     
                 &__col {

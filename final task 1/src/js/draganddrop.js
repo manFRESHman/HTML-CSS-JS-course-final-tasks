@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         drop.classList.add('ui-draganddrop-drop');
 
         drop.addEventListener('drop', (ev) => {
+            ev.preventDefault();
             const idx = ev.dataTransfer.getData("idx");
             drag.childNodes[idx].style.display = "none";
             

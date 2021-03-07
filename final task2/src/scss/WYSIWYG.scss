@@ -61,8 +61,28 @@ $white: #FFF;
                     cursor: pointer;
 
                     &_select {
-                        border: none;
                         width: 3em;
+                        display: inline-flex;
+                        position: relative;
+                        
+                        & > * {
+                            border: none;
+                            -webkit-appearance: none;
+                            width: 100%;
+                        }
+
+                        &::after {
+                            font-family: 'Material Icons';
+                            content: 'arrow_drop_down';
+                            position: absolute;
+                            right: 0;
+                            transform: translate(-50%, 0%);
+                            pointer-events: none;
+                        }
+                    }
+                    
+                    &_text {
+                        width: 5em;
                     }
                 }
             }
@@ -72,7 +92,7 @@ $white: #FFF;
     @media (max-width: 1279px) {
         input:checked ~ .editor__footer__options__section {
             &:nth-child(n + 6):nth-child(-n + 12) {
-                display: block;
+                display: flex;
             }
         }
 
@@ -86,7 +106,7 @@ $white: #FFF;
                     display: none;
                     position: absolute;
                     background-color: $white;
-                    left: 49em;
+                    left: 54em;
                 }
 
                 @for $i from 6 through 12 {
@@ -101,7 +121,7 @@ $white: #FFF;
     @media (max-width: 768px) {
         input:checked ~ .editor__footer__options__section {
             &:nth-child(n + 4):nth-child(-n + 12) {
-                display: block;
+                display: flex;
             }
         }
 
@@ -111,7 +131,7 @@ $white: #FFF;
                     display: none;
                     position: absolute;
                     background-color: $white;
-                    left: 16em;
+                    left: 18em;
                 }
 
                 @for $i from 4 through 12 {

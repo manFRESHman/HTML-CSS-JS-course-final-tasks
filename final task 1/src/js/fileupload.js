@@ -57,8 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const size = document.createElement('div');
             size.innerText = `${Math.ceil(file.size / 1024)} KB`;
             const remove = document.createElement('button');
-            remove.addEventListener('click', (event) => {
-                const container = event.target.parentNode;
+            remove.addEventListener('click', () => {
+                const container = remove.parentNode;
                 container.parentNode.removeChild(container);
             });
             remove.className = 'ui-button ui-button--primary';
