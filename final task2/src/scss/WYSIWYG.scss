@@ -54,13 +54,17 @@ $white: #FFF;
 
                     &_select {
                         width: 3em;
+                        height: 1em;
                         display: inline-flex;
                         position: relative;
+                        align-items: center;
                         
                         .editor__footer__options__section__element__dropdown {
                             border: none;
                             -webkit-appearance: none;
                             width: 100%;
+                            font-size: 1em;
+                            height: 1.5em;
                         }
 
                         &::after {
@@ -75,6 +79,7 @@ $white: #FFF;
 
                     &_text {
                         width: 8em;
+                        height: 1em;
                         font-size: unset;
                         border: none;
                     }
